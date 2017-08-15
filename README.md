@@ -13,7 +13,7 @@
 
 # MICROSERVICE ARCHITECTURE BEHAVIOUR
 
-## 1) Config First
+## 1) Configuration First
 
 **application.yml**
 
