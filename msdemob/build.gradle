@@ -1,0 +1,90 @@
+buildscript {
+    ext {
+        kotlinVersion = '1.1.3-2'
+        springBootVersion = '1.5.6.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
+    }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-spring'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+}
+
+ext {
+    springCloudVersion = 'Dalston.SR2'
+}
+
+dependencies {
+    // model dtos
+    compile('io.capdevila.poc.msarchitecture:dto.lib:1.0-SNAPSHOT')
+
+    // actuator endpoints
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+
+    // config client
+    compile('org.springframework.cloud:spring-cloud-starter-config')
+    // to receive config hot updates from config server
+    compile('org.springframework.cloud:spring-cloud-starter-bus-amqp')
+
+    // eureka client
+    compile('org.springframework.cloud:spring-cloud-starter-eureka')
+
+    // spring retry
+    compile('org.springframework.retry:spring-retry')
+    compile('org.springframework.boot:spring-boot-starter-aop')
+
+    // spring web with undertow
+    compile('org.springframework.boot:spring-boot-starter-web') {
+        exclude module: 'spring-boot-starter-tomcat'
+    }
+    compile('org.springframework.boot:spring-boot-starter-undertow')
+
+    // ribbon - software load balancer
+    compile('org.springframework.cloud:spring-cloud-starter-ribbon')
+
+    // hystrix - circuit breaker
+    compile('org.springframework.cloud:spring-cloud-starter-hystrix')
+    // hystrix stream to feed turbine
+    compile('org.springframework.cloud:spring-cloud-netflix-hystrix-stream')
+    compile('org.springframework.cloud:spring-cloud-starter-stream-rabbit')
+
+    // feign clients
+    compile('org.springframework.cloud:spring-cloud-starter-feign')
+
+    compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
+    compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}

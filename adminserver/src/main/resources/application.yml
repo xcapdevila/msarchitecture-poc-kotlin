@@ -1,0 +1,61 @@
+info:
+  name: ${spring.application.name}
+  description: Admin Server registered in Eureka that monitors the microservices registered
+  version: 1.0
+  language: Kotlin
+  project:
+    description: Spring Boot, Spring Cloud & Netflix OSS Microservice Architecture POC
+    git: https://github.com/xcapdevila/msarchitecture-poc-kotlin
+  author:
+    name: Xavier Capdevila Estevez
+    git: https://github.com/xcapdevila
+    linkedin: https://www.linkedin.com/in/xcapdevila/
+  license: CC BY-NC-SA
+
+logging:
+  file: logs/${spring.application.name}.log
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'INFO'
+    org.springframework.web: 'INFO'
+    io.capdevila: 'TRACE'
+
+server:
+  port: ${PORT:9999}
+
+management:
+  security:
+    enabled: ${SECURE:false}
+
+security:
+  basic:
+    enabled: ${management.security.enabled}
+  user:
+    name: 'admin'
+    password: 'admin1234'
+
+spring:
+  application:
+    name: ${APPLICATION_NAME:adminserver}
+  boot:
+    admin:
+      monitor:
+        connect-timeout: 2000
+        read-timeout: 30000
+        period: 10000
+        status-lifetime: 10000
+      notify:
+        mail:
+          to: ["root@localhost"]
+          subject: "#{application.name} (#{application.id}) is #{to.status}"
+          text: "#{application.name} (#{application.id})\nstatus changed from #{from.status} to #{to.status}\n\n#{application.healthUrl}"
+      url: ${ADMIN_SERVER_ENDPOINT:http://localhost:${server.port}}
+  mail:
+      host: localhost
+      port: 25
+      username: xcapdevila
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="adminserver_main" target="1.8" />
+      <module name="adminserver_test" target="1.8" />
+      <module name="configserver_main" target="1.8" />
+      <module name="configserver_test" target="1.8" />
+      <module name="dto.lib_main" target="1.8" />
+      <module name="dto.lib_test" target="1.8" />
+      <module name="eurekaserver_main" target="1.8" />
+      <module name="eurekaserver_test" target="1.8" />
+      <module name="hystrixdashboard_main" target="1.8" />
+      <module name="hystrixdashboard_test" target="1.8" />
+      <module name="msdemoa_main" target="1.8" />
+      <module name="msdemoa_test" target="1.8" />
+      <module name="msdemob_main" target="1.8" />
+      <module name="msdemob_test" target="1.8" />
+      <module name="mslib_main" target="1.8" />
+      <module name="mslib_test" target="1.8" />
+      <module name="zuulserver_main" target="1.8" />
+      <module name="zuulserver_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

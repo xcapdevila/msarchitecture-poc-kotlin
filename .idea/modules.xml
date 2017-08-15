@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/adminserver/adminserver.iml" filepath="$PROJECT_DIR$/adminserver/adminserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/adminserver_main.iml" filepath="$PROJECT_DIR$/.idea/modules/adminserver_main.iml" group="adminserver" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/adminserver_test.iml" filepath="$PROJECT_DIR$/.idea/modules/adminserver_test.iml" group="adminserver" />
+      <module fileurl="file://$PROJECT_DIR$/configserver/configserver.iml" filepath="$PROJECT_DIR$/configserver/configserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/configserver_main.iml" filepath="$PROJECT_DIR$/.idea/modules/configserver_main.iml" group="configserver" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/configserver_test.iml" filepath="$PROJECT_DIR$/.idea/modules/configserver_test.iml" group="configserver" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dto.lib.iml" filepath="$PROJECT_DIR$/.idea/modules/dto.lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dto.lib_main.iml" filepath="$PROJECT_DIR$/.idea/modules/dto.lib_main.iml" group="dto.lib" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dto.lib_test.iml" filepath="$PROJECT_DIR$/.idea/modules/dto.lib_test.iml" group="dto.lib" />
+      <module fileurl="file://$PROJECT_DIR$/eurekaserver/eurekaserver.iml" filepath="$PROJECT_DIR$/eurekaserver/eurekaserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eurekaserver_main.iml" filepath="$PROJECT_DIR$/.idea/modules/eurekaserver_main.iml" group="eurekaserver" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eurekaserver_test.iml" filepath="$PROJECT_DIR$/.idea/modules/eurekaserver_test.iml" group="eurekaserver" />
+      <module fileurl="file://$PROJECT_DIR$/hystrixdashboard/hystrixdashboard.iml" filepath="$PROJECT_DIR$/hystrixdashboard/hystrixdashboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hystrixdashboard_main.iml" filepath="$PROJECT_DIR$/.idea/modules/hystrixdashboard_main.iml" group="hystrixdashboard" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hystrixdashboard_test.iml" filepath="$PROJECT_DIR$/.idea/modules/hystrixdashboard_test.iml" group="hystrixdashboard" />
+      <module fileurl="file://$PROJECT_DIR$/msdemoa/msdemoa.iml" filepath="$PROJECT_DIR$/msdemoa/msdemoa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/msdemoa_main.iml" filepath="$PROJECT_DIR$/.idea/modules/msdemoa_main.iml" group="msdemoa" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/msdemoa_test.iml" filepath="$PROJECT_DIR$/.idea/modules/msdemoa_test.iml" group="msdemoa" />
+      <module fileurl="file://$PROJECT_DIR$/msdemob/msdemob.iml" filepath="$PROJECT_DIR$/msdemob/msdemob.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/msdemob_main.iml" filepath="$PROJECT_DIR$/.idea/modules/msdemob_main.iml" group="msdemob" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/msdemob_test.iml" filepath="$PROJECT_DIR$/.idea/modules/msdemob_test.iml" group="msdemob" />
+      <module fileurl="file://$PROJECT_DIR$/zuulserver/zuulserver.iml" filepath="$PROJECT_DIR$/zuulserver/zuulserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/zuulserver_main.iml" filepath="$PROJECT_DIR$/.idea/modules/zuulserver_main.iml" group="zuulserver" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/zuulserver_test.iml" filepath="$PROJECT_DIR$/.idea/modules/zuulserver_test.iml" group="zuulserver" />
+    </modules>
+  </component>
+</project>

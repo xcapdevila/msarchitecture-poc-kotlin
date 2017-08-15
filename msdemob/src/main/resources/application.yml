@@ -1,0 +1,46 @@
+info:
+  name: ${spring.application.name}
+  description: Microservice B that comunicates with Microservice A using Ribbon and Hystrix
+  version: 1.0
+  language: Kotlin
+  project:
+    description: Spring Boot, Spring Cloud & Netflix OSS Microservice Architecture POC
+    git: https://github.com/xcapdevila/msarchitecture-poc-kotlin
+  author:
+    name: Xavier Capdevila Estevez
+    git: https://github.com/xcapdevila
+    linkedin: https://www.linkedin.com/in/xcapdevila/
+  license: CC BY-NC-SA
+
+logging:
+  file: logs/${spring.application.name}.log
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'INFO'
+    org.springframework.web: 'INFO'
+    io.capdevila: 'TRACE'
+
+server:
+  port: ${PORT:0}
+
+management:
+  security:
+    enabled: false
+
+spring:
+  application:
+    name: ${APPLICATION_NAME:msdemob}
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+mspoc:
+  msdemoa:
+    name: msdemoa
+    helloRequestUrl: http://${mspoc.msdemoa.name}/poc/helloRequest/
+
+feign:
+  hystrix:
+    enabled: true

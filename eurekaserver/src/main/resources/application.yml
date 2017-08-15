@@ -1,0 +1,51 @@
+info:
+  name: ${spring.application.name}
+  description: Eureka Server (Discovery Server)
+  version: 1.0
+  language: Kotlin
+  project:
+    description: Spring Boot, Spring Cloud & Netflix OSS Microservice Architecture POC
+    git: https://github.com/xcapdevila/msarchitecture-poc-kotlin
+  author:
+    name: Xavier Capdevila Estevez
+    git: https://github.com/xcapdevila
+    linkedin: https://www.linkedin.com/in/xcapdevila/
+  license: CC BY-NC-SA
+
+logging:
+  file: logs/${spring.application.name}.log
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'INFO'
+    org.springframework.web: 'INFO'
+    io.capdevila: 'TRACE'
+
+eureka:
+  instance:
+    hostname: ${HOSTNAME:localhost}
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    enableSelfPreservation: true
+
+server:
+  port: ${PORT:1111}
+
+management:
+  security:
+    enabled: ${SECURE:false}
+
+spring:
+  application:
+    name: ${APPLICATION_NAME:eurekaserver}
+  thymeleaf: # Discovery Server Dashboard uses FreeMarker.  Don't want Thymeleaf templates
+    enabled: false
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest

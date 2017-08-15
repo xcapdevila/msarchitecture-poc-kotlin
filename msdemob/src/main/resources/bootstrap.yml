@@ -1,0 +1,16 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${EUREKA_SERVER_ENDPOINT:localhost:1111}/eureka/
+spring:
+  application:
+    name: ${APPLICATION_NAME:msdemob}
+  cloud:
+    config:
+      failFast: true
+      retry:
+        initialInterval: ${CLOUD_CONFIG_RETRY_INITIAL_INTERVAL:1000}
+        maxAttempts: ${CLOUD_CONFIG_RETRY_MAX_ATTEMPTS:10}
+      discovery:
+        enabled: true
+        service-id: ${CONFIG_SERVER_NAME:configserver}

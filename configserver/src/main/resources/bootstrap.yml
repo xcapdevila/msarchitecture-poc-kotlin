@@ -1,0 +1,14 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${EUREKA_SERVER_ENDPOINT:localhost:1111}/eureka/
+
+spring:
+  application:
+    name: ${APPLICATION_NAME:configserver}
+  cloud:
+    config:
+      failFast: true
+      retry:
+        initialInterval: ${CLOUD_CONFIG_RETRY_INITIAL_INTERVAL:1000}
+        maxAttempts: ${CLOUD_CONFIG_RETRY_MAX_ATTEMPTS:10}

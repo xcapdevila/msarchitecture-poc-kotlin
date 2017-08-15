@@ -1,0 +1,37 @@
+info:
+  name: ${spring.application.name}
+  description: Zuul Server registered in Eureka that acts as a proxy reverse for the requests recivied to microservices registered
+  version: 1.0
+  language: Kotlin
+  project:
+    description: Spring Boot, Spring Cloud & Netflix OSS Microservice Architecture POC
+    git: https://github.com/xcapdevila/msarchitecture-poc-kotlin
+  author:
+    name: Xavier Capdevila Estevez
+    git: https://github.com/xcapdevila
+    linkedin: https://www.linkedin.com/in/xcapdevila/
+  license: CC BY-NC-SA
+
+logging:
+  file: logs/${spring.application.name}.log
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+    org.springframework.web: 'INFO'
+    io.capdevila: 'TRACE'
+
+server:
+  port: ${PORT:8080}
+
+management:
+  security:
+    enabled: false
+
+spring:
+  application:
+    name: ${APPLICATION_NAME:zuulserver}
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
