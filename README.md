@@ -13,7 +13,7 @@
 
 # REQUIREMENTS
 
-1) Clone **ConfigFiles**(https://github.com/xcapdevila/msarchitecture-poc-config) repo to your home (change properties files if you clone it somewhere else)
+1) Clone **ConfigFiles**(https://github.com/xcapdevila/msarchitecture-poc-config) repo to tmp folder in your home (change properties files if you clone it somewhere else)
 2) Install & start **RabbitMQ** in localhost (change properties files if you use a non default configuration)
 
 # MICROSERVICE ARCHITECTURE BEHAVIOUR
