@@ -17,10 +17,12 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                //FIXME all role user??
-                .antMatchers("/**").access("hasRole('USER')")
+                .antMatchers("/eureka/**").hasRole("ADMIN")
+                .antMatchers("/adminserver/**").hasRole("SUPER_ADMIN")
                 .antMatchers("/msdemob/**").access("hasRole('ADMIN')")
-                .antMatchers("/adminserver/**").permitAll()
+                .anyRequest().authenticated()
+                .and().formLogin().and().logout().permitAll()
+                .logoutSuccessUrl("/logged_out").permitAll()
                 .and().httpBasic()
 
     }
@@ -38,6 +40,7 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
         auth.inMemoryAuthentication().withUser("user5").password("pwd5").roles("USER").accountLocked(false).disabled(true)
 
         auth.inMemoryAuthentication().withUser("admin").password("admin").roles("ADMIN").accountLocked(false).disabled(false)
+        auth.inMemoryAuthentication().withUser("superadmin").password("admin").roles("SUPER_ADMIN").accountLocked(false).disabled(false)
 
     }
 }

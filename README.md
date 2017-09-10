@@ -3,13 +3,18 @@
 **Microservices architecture example based on Spring Boot, Spring Cloud & Netflix OSS with the following components:**
 - **EurekaServer** (alternatives: Consul)
 - **ConfigServer** (alternatives: Archaius)
-- **ConfigFiles** (git repo with configuration files @see ())
+- **ConfigFiles** (git repo with configuration files @see (https://github.com/xcapdevila/msarchitecture-poc-config))
 - **AdminServer** (with email notifications @see (https://gist.github.com/raelgc/6031274)
 - **HystrixDashboard**
 - **ZuulServer**
 - **DtoLib**
 - **MsDemoA**
 - **MsDemoB**
+
+# REQUIREMENTS
+
+1) Clone **ConfigFiles** repo to your home (change properties files if you clone it somewhere else)
+2) Install & start **RabbitMQ** in localhost (change properties files if you use a non default configuration)
 
 # MICROSERVICE ARCHITECTURE BEHAVIOUR
 

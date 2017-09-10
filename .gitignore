@@ -53,3 +53,4 @@ gradle-app.setting
 
 # Log file
 *.log
+\.idea/
